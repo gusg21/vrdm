@@ -17,6 +17,7 @@ namespace Unity.Template.VR
         public InputAction MoveDistAxisAction;
         public InputAction PauseAction;
         public InputAction DeleteAction;
+        public InputAction UIClickAction;
 
         public void Pause()
         {
