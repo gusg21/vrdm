@@ -26,10 +26,10 @@ public class UIButton : MonoBehaviour
                 Debug.LogError("Failed to find XRRayInteractor!");
         }
 
-        GameInfo.I.UIClickAction.performed += UIClickAction_performed;
+        GameInfo.I.UIClickAction.started += ButtonClicked;
     }
 
-    private void UIClickAction_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    private void ButtonClicked(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         if (Hovered)
         {
@@ -37,12 +37,7 @@ public class UIButton : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Ray handRay = new(Interactor.rayOriginTransform.position, Interactor.rayOriginTransform.forward);
-        RaycastHit hitInfo;
-        Physics.Raycast(handRay, out hitInfo);
-        Hovered = hitInfo.collider == ButtonCollider;
-    }
+    public void OnHoverEntered(HoverEnterEventArgs evt) => Hovered = true;
+
+    public void OnHoverExited(HoverExitEventArgs evt) => Hovered = false;
 }

@@ -9,9 +9,15 @@ using UnityEngine;
 
 namespace Unity.Template.VR
 {
+    public enum MidiZone
+    {
+        A, B, C, D
+    }
+
     public class MidiInfo : MonoBehaviour
     {
         public static MidiInfo I;
+        public static int MidiChannel = 1;
 
         public OutputDevice Device;
         public string MidiDeviceName = "";
@@ -34,13 +40,17 @@ namespace Unity.Template.VR
             return (int) name;
         }
 
-        public IEnumerator Trigger(NoteName noteName, int octave, SevenBitNumber velocity)
+        public IEnumerator Trigger(NoteName noteName, int octave, SevenBitNumber velocity, MidiZone zone = MidiZone.A)
         {
-            Device.SendEvent(new NoteOnEvent(Note.Get(noteName, octave+1).NoteNumber, velocity));
+            var onEvent = new NoteOnEvent(Note.Get(noteName, octave+1).NoteNumber, velocity);
+            onEvent.Channel = (FourBitNumber)(MidiChannel + (int)zone);
+            Device.SendEvent(onEvent);
 
             yield return new WaitForEndOfFrame();
-            
-            Device.SendEvent(new NoteOffEvent(Note.Get(noteName, octave+1).NoteNumber, velocity));
+
+            var offEvent = new NoteOffEvent(Note.Get(noteName, octave + 1).NoteNumber, velocity);
+            offEvent.Channel = (FourBitNumber)(MidiChannel + (int)zone);
+            Device.SendEvent(offEvent);
         }
 
         private void Awake()

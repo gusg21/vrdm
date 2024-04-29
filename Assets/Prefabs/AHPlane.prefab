@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4172207236926527545}
   - component: {fileID: 4172207236926527544}
   - component: {fileID: 2565030885993531456}
+  - component: {fileID: 7194213829517743760}
   m_Layer: 0
   m_Name: AHPlane
   m_TagString: Trigger
@@ -284,6 +285,22 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &7194213829517743760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4172207236926527542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae726a15035587a41b035b0404b466a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hovered: 0
+  EditPanelVisible: 0
+  ConfigPanel: {fileID: 7702712577599863383, guid: acbdd2d2ab293b5468137f7bc0e4fe07,
+    type: 3}
 --- !u!1 &6017437838098558906
 GameObject:
   m_ObjectHideFlags: 0

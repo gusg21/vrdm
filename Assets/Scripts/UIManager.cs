@@ -15,13 +15,25 @@ public class UIManager : MonoBehaviour
 
     public void UpdateMidiChannelText()
     {
-        MidiChannelText.text = "Midi Channel #" + MidiChannel.ToString();
+        MidiChannelText.text = $"Midi Channel #{MidiChannel},{MidiChannel+1},{MidiChannel+2},{MidiChannel+3}";
     }
 
     public void IncrementMidiChannel()
     {
+        Debug.Log("Blogosphere");
         MidiChannel++;
-        MidiChannel = Mathf.Clamp(MidiChannel, 1, 16);
+        if (MidiChannel >= 14)
+        {
+            MidiChannel = 1;
+        } else if (MidiChannel <= 0)
+        {
+            MidiChannel = 13;
+        }
         UpdateMidiChannelText();
+    }
+
+    public void Confirm()
+    {
+        Unity.Template.VR.MidiInfo.MidiChannel = MidiChannel;
     }
 }

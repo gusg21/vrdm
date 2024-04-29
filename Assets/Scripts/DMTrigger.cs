@@ -23,6 +23,9 @@ namespace Unity.Template.VR
 
         private void Start()
         {
+            TriggeredLineMaterial = Resources.Load<Material>("LineMaterial Triggered.mat");
+            DefaultLineMaterial = Resources.Load<Material>("LineMaterial.mat");
+
             LineRenderer.material = DefaultLineMaterial;
         }
 

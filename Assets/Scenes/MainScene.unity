@@ -861,7 +861,7 @@ PrefabInstance:
     - target: {fileID: 4172207236926527538, guid: 88eb9b3c4c1ee3f47b178c5aa99d31a5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4172207236926527538, guid: 88eb9b3c4c1ee3f47b178c5aa99d31a5,
         type: 3}
@@ -1309,7 +1309,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &599916906
 MonoBehaviour:
@@ -2613,7 +2613,7 @@ Transform:
   - {fileID: 390234286}
   - {fileID: 705507995}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2090070294
 GameObject:
@@ -2871,6 +2871,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4441405662112554043, guid: 16c0b3e6fe68dcf4781e9c7b4cfbf06d,
+        type: 3}
+      propertyPath: ConfigureAction.m_Id
+      value: 097150c9-6f2e-444a-985e-5a280fdba88d
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441405662112554043, guid: 16c0b3e6fe68dcf4781e9c7b4cfbf06d,
+        type: 3}
+      propertyPath: ConfigureAction.m_Name
+      value: Configure
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441405662112554043, guid: 16c0b3e6fe68dcf4781e9c7b4cfbf06d,
+        type: 3}
+      propertyPath: ConfigureAction.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441405662112554043, guid: 16c0b3e6fe68dcf4781e9c7b4cfbf06d,
+        type: 3}
+      propertyPath: ConfigureAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: f3ebb28b-aefd-4eb5-81bd-499c5c2066ea
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441405662112554043, guid: 16c0b3e6fe68dcf4781e9c7b4cfbf06d,
+        type: 3}
+      propertyPath: ConfigureAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <OculusTouchController>{LeftHand}/secondaryButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441405662112554043, guid: 16c0b3e6fe68dcf4781e9c7b4cfbf06d,
+        type: 3}
+      propertyPath: ConfigureAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Configure
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441405662112554043, guid: 16c0b3e6fe68dcf4781e9c7b4cfbf06d,
+        type: 3}
+      propertyPath: MoveDistAxisAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <OculusTouchController>{LeftHand}/thumbstick/y
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16c0b3e6fe68dcf4781e9c7b4cfbf06d, type: 3}
 --- !u!1001 &5774105144846730097
@@ -2913,7 +2948,7 @@ PrefabInstance:
     - target: {fileID: 4172207236926527538, guid: 88eb9b3c4c1ee3f47b178c5aa99d31a5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4172207236926527538, guid: 88eb9b3c4c1ee3f47b178c5aa99d31a5,
         type: 3}

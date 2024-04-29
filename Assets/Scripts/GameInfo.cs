@@ -18,6 +18,7 @@ namespace Unity.Template.VR
         public InputAction PauseAction;
         public InputAction DeleteAction;
         public InputAction UIClickAction;
+        public InputAction ConfigureAction;
 
         public void Pause()
         {
@@ -47,6 +48,8 @@ namespace Unity.Template.VR
             RotateAction.Enable();
             MoveDistAxisAction.Enable();
             DeleteAction.Enable();
+            UIClickAction.Enable();
+            ConfigureAction.Enable();
 
             PauseAction.started += _ => TogglePause();
             
