@@ -11,6 +11,7 @@ namespace Unity.Template.VR
         public GameObject ApplePrefab;
         public NoteName NoteName;
         public int Octave;
+        public MidiZone Zone;
         public TextMeshPro Text;
         public DMEditable Editable;
 
@@ -26,6 +27,7 @@ namespace Unity.Template.VR
             apple.GetComponent<Apple>().NoteName = NoteName;
             apple.GetComponent<Apple>().Octave = Octave;
             apple.GetComponent<Apple>().Editable = Editable;
+            apple.GetComponent<Apple>().SetZone(Zone);
         }
 
         public void IncrementNote()

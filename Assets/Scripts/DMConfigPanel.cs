@@ -21,6 +21,11 @@ public class DMConfigPanel : MonoBehaviour
         Configurable.ToggleTrigger();
     }
 
+    public void ClosePanel()
+    {
+        Configurable.ClosePanel();
+    }
+
     // Update is called once per frame
     void Update()
     {

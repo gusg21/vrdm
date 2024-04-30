@@ -20,7 +20,6 @@ public class UIManager : MonoBehaviour
 
     public void IncrementMidiChannel()
     {
-        Debug.Log("Blogosphere");
         MidiChannel++;
         if (MidiChannel >= 14)
         {

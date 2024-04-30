@@ -40,16 +40,16 @@ namespace Unity.Template.VR
             return (int) name;
         }
 
-        public IEnumerator Trigger(NoteName noteName, int octave, SevenBitNumber velocity, MidiZone zone = MidiZone.A)
+        public IEnumerator Trigger(NoteName noteName, int octave, SevenBitNumber velocity, MidiZone zone)
         {
             var onEvent = new NoteOnEvent(Note.Get(noteName, octave+1).NoteNumber, velocity);
-            onEvent.Channel = (FourBitNumber)(MidiChannel + (int)zone);
+            onEvent.Channel = (FourBitNumber)(MidiChannel + (int)zone - 1);
             Device.SendEvent(onEvent);
 
             yield return new WaitForEndOfFrame();
 
             var offEvent = new NoteOffEvent(Note.Get(noteName, octave + 1).NoteNumber, velocity);
-            offEvent.Channel = (FourBitNumber)(MidiChannel + (int)zone);
+            offEvent.Channel = (FourBitNumber)(MidiChannel + (int)zone - 1);
             Device.SendEvent(offEvent);
         }
 

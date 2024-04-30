@@ -29,14 +29,24 @@ public class DMConfigurable : MonoBehaviour
         interactible.hoverExited.AddListener(OnHoverExited);
     }
 
-    private void ToggleEditPanel()
+    public void ClosePanel()
     {
+        EditPanelVisible = false;
+        ConfigOpen = null;
+        Destroy(_panel);
+        GameInfo.I.Unpause();
+    }
+
+    public void ToggleEditPanel()
+    {
+        if (ConfigOpen != this && ConfigOpen != null)
+        {
+            ConfigOpen.ClosePanel();
+        }
+
         if (EditPanelVisible && ConfigOpen == this)
         {
-            EditPanelVisible = false;
-            ConfigOpen = null;
-            Destroy(_panel);
-            GameInfo.I.Unpause();
+            ClosePanel();
         }
         else if (!EditPanelVisible && ConfigOpen == null)
         {

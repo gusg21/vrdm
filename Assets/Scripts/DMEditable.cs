@@ -63,7 +63,6 @@ namespace Unity.Template.VR
                 Ray handRay = new(Interactor.rayOriginTransform.position, Interactor.rayOriginTransform.forward);
 
                 var rawMoveDist = -GameInfo.I.MoveDistAxisAction.ReadValue<float>() / 2f + 0.5f; // [-1, 1] -> [0, 1]
-                Debug.Log(rawMoveDist);
                 rawMoveDist = Mathf.Lerp(MinMoveDistance, MaxMoveDistance, rawMoveDist); // [0, 1] -> [min, max]
                 _rayMoveDistance = Mathf.Lerp(_rayMoveDistance, rawMoveDist, MoveDistLerpAmt);
                 transform.position = Vector3.Lerp(transform.position, handRay.GetPoint(_rayMoveDistance), MoveLerpAmt);

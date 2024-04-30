@@ -7,6 +7,7 @@ TagManager:
   - Portal
   - Apple
   - Trigger
+  - Quadrant
   layers:
   - Default
   - TransparentFX
@@ -37,7 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Quadrant
   - NonInteractable
   - Interactable
   m_SortingLayers:

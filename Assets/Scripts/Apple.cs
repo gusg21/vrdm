@@ -14,7 +14,7 @@ public class Apple : MonoBehaviour
     public TextMeshPro TextMesh;
     public Rigidbody Body;
     public DMEditable Editable;
-    
+
     [Tooltip("The amount of time to wait between collision triggers (in seconds)")]
     public float TriggerDeadTime = 0.1f;
 
@@ -24,6 +24,7 @@ public class Apple : MonoBehaviour
 
     private float _lastTriggerTime = 0f;
     private OutputDevice _myDevice;
+    private MidiZone Zone = MidiZone.A;
 
     private void Start()
     {
@@ -34,26 +35,24 @@ public class Apple : MonoBehaviour
     {
         if (Editable.Manipulating) Body.Sleep();
         else Body.WakeUp();
-        
-        Debug.Log(Editable.Hovered);
     }
+
+    public void SetZone(MidiZone zone) { Zone = zone; }
 
     public IEnumerator OnCollisionEnter(Collision colData)
     {
         // Don't count anything but the triggers (AHPlanes) as triggers
         if (!colData.collider.CompareTag("Trigger")) yield break;
-        
+
         // Don't trigger again too fast
         if (Time.time - _lastTriggerTime > TriggerDeadTime)
         {
             _lastTriggerTime = Time.time;
 
             colData.gameObject.GetComponent<DMTrigger>()?.SendTrigger();
-            
-            Debug.Log(NoteName);
 
             yield return MidiInfo.I.Trigger(NoteName, Octave,
-                MidiInfo.I.SpeedToMidiVelocity(colData.relativeVelocity.magnitude));
+                MidiInfo.I.SpeedToMidiVelocity(colData.relativeVelocity.magnitude), Zone);
         }
     }
 }

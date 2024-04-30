@@ -11,7 +11,6 @@ namespace Unity.Template.VR
         public DMPortal OtherPortal;
         public bool IsGreen;
         public MeshRenderer PlaneMeshRenderer;
-        public MeshRenderer ArrowMeshRenderer;
 
         [HideInInspector] public bool QueuedForDestruction = false;
 
@@ -20,12 +19,10 @@ namespace Unity.Template.VR
             MeshRenderer mesh = GetComponent<MeshRenderer>();
             if (IsGreen)
             {
-                ArrowMeshRenderer.material.color = new Color(0, 255f/255f, 0, 92f/255f);
                 PlaneMeshRenderer.material = PortalsInfo.I.GreenPortalMaterial;
             }
             else
             {
-                ArrowMeshRenderer.material.color = new Color(255f/255f, 0, 0, 92f/255f);
                 PlaneMeshRenderer.material = PortalsInfo.I.RedPortalMaterial;
             }
         }
